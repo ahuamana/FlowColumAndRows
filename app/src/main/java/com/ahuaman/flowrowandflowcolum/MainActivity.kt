@@ -43,149 +43,63 @@ class MainActivity : ComponentActivity() {
 }
 
 
-
-@OptIn(ExperimentalLayoutApi::class)
 @Preview(showBackground = true)
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun GreetingPreview() {
-    FlowRowAndFlowColumTheme {
-        FlowRow(
-            modifier = Modifier
-                .padding(4.dp)
-                .fillMaxWidth(),
-            horizontalArrangement = Arrangement.spacedBy(0.dp),
-            maxItemsInEachRow = 4,
-        ) {
-
-            NewMenu(
-                text = "Sandwiches"
-            )
-            NewMenu(
-                text = "Chicken"
-            )
-            NewMenu(
-                text = "Fruits"
-            )
-            NewMenu(
-                text = "Chinese"
-            )
-        }
-    }
-}
-
-
-@Composable
-fun NewMenu(
-    text:String
-) {
-    Card(modifier = Modifier.padding(4.dp)) {
-        Text(
-            modifier = Modifier.padding(16.dp),
-            text = text
+fun FlowRowTestingUI() {
+    FlowRow() {
+        MenuItem(
+            title = "Sandwiches"
+        )
+        MenuItem(
+            title = "Chicken"
+        )
+        MenuItem(
+            title = "Fruits"
+        )
+        MenuItem(
+            title = "Chinese"
+        )
+        MenuItem(
+            title = "Sandwiches"
         )
     }
 }
 
 
-@Composable
-fun NewNotes(
-    modifier: Modifier = Modifier,
-    description:String,
-    title: String
-) {
-    Card(
-        modifier = modifier.padding(4.dp), // padding outside
-    ) {
-        Column(modifier = Modifier.padding(16.dp)) {
-            Text(text = title)
-            Spacer(modifier = Modifier.padding(8.dp))
-            Text(text = description)
-        }
 
+@Composable
+fun MenuItem(title:String) {
+    Card(modifier = Modifier.padding(4.dp)) {
+        Text(
+            modifier = Modifier.padding(16.dp),
+            text = title
+        )
     }
 }
 
+
+//Now Flow Colum testing
 @OptIn(ExperimentalLayoutApi::class)
-@Preview
+@Preview(showBackground = true)
 @Composable
-fun NewNotesPreview() {
-    FlowRowAndFlowColumTheme {
-        FlowColumn(
-            modifier = Modifier
-                .padding(5.dp)
-                .fillMaxWidth().fillMaxHeight(),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            maxItemsInEachColumn = 10,
-        ) {
-            NewNotes(
-                modifier = Modifier,
-                description = "Today is a good day",
-                title = "Title new premium"
-            )
-
-            NewNotes(
-                modifier = Modifier,
-                description = "I am happy today, I want to go to the beach and work with my laptop",
-                title = "My notes"
-            )
-
-            NewNotes(
-                modifier = Modifier,
-                description = "Today is a good day",
-                title = "Title new premium"
-            )
-
-
-            NewNotes(
-                modifier = Modifier,
-                description = "I am happy today",
-                title = "My notes"
-            )
-
-            NewNotes(
-                modifier = Modifier,
-                description = "Today is a good day",
-                title = "Title new premium"
-            )
-
-            NewNotes(
-                modifier = Modifier,
-                description = "I am happy today",
-                title = "My noteaas"
-            )
-
-            NewNotes(
-                modifier = Modifier,
-                description = "I am happy today",
-                title = "My noteaas"
-            )
-
-            NewNotes(
-                modifier = Modifier,
-                description = "I am happy today",
-                title = "My noteaas"
-            )
-
-            NewNotes(
-                modifier = Modifier,
-                description = "I am happy today",
-                title = "My noteaas"
-            )
-
-
-            NewNotes(
-                modifier = Modifier,
-                description = "I am happy today",
-                title = "My noteaas"
-            )
-
-            NewNotes(
-                modifier = Modifier,
-                description = "I am happy today",
-                title = "My noteaas"
-            )
-
-        }
-
+fun FlowColumUITesting() {
+    FlowColumn {
+        MenuItem(
+            title = "Sandwiches"
+        )
+        MenuItem(
+            title = "Chicken"
+        )
+        MenuItem(
+            title = "Fruits"
+        )
+        MenuItem(
+            title = "Chinese"
+        )
+        MenuItem(
+            title = "Sandwiches"
+        )
     }
 }
+
